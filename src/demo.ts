@@ -1,7 +1,7 @@
 import express from "express";
 import fs from "fs";
 import path from "path";
-import { RESTStartingResource, GraphQLEndpoint } from "./endpoints";
+import { RESTStartingResource, GraphQLEndpoint, HOSTNAME } from "./endpoints";
 
 const mainJS = fs
   .readFileSync(path.resolve(__dirname, "../webdemo/main.js"))
@@ -19,7 +19,7 @@ const indexHTML = fs
   .readFileSync(path.resolve(__dirname, "../webdemo/index.html"))
   .toString()
   .replace("REPLACE_RESTENDPOINT", RESTStartingResource)
-  .replace("REPLACE_GRAPHQLENDPOINT", GraphQLEndpoint);
+  .replace("REPLACE_GRAPHQLENDPOINT", HOSTNAME);
 
 export function configureDemo(app: express.Express) {
   app.get("/", (_, res) => {

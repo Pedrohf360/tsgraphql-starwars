@@ -15,5 +15,5 @@ export const HOSTNAME = process.env.HOSTNAME || `localhost`;
 export const GRAPHQLPATH = "/graphql";
 
 export const RESTEndpoint = `http://localhost:${PORT}`;
-export const GraphQLEndpoint = process.env.HOSTNAME;
+export const GraphQLEndpoint = `${RESTEndpoint}${GRAPHQLPATH}`;
 export const RESTStartingResource = `${RESTEndpoint}/api/people/1`;
