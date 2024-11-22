@@ -1,6 +1,6 @@
 async function runREST() {
   // This value will be rewritten by demo.ts
-  const LukeURI = REPLACEME;
+  const LukeURI = 'http://localhost:8000/api/people/1';
   const character = await fetchObject(LukeURI);
   const films = await fetchAll(character.films);
   const allCharacterURIs = flatten(films.map(film => film.characters));
@@ -15,7 +15,7 @@ async function runREST() {
 
 async function runGraphQL() {
   // This value will be rewritten by demo.ts
-  const GraphQLEndpoint = REPLACEME;
+  const GraphQLEndpoint = 'http://localhost:8000/graphql';
   const { data } = await fetchGraphQL(
     GraphQLEndpoint,
     `{

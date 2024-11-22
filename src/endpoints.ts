@@ -10,7 +10,7 @@ if (!process.env.PORT) {
   );
 }
 
-export const PORT = process.env.PORT || 80;
+export const PORT = process.env.PORT || 8000;
 export const HOSTNAME = process.env.HOSTNAME || `localhost`;
 export const GRAPHQLPATH = "/graphql";
 
